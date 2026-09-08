@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thumbi — Magical Pet</title>
+  <link rel="stylesheet" href="thumbi.css">
+</head>
+<body>
+  <main class="stage">
+    <section class="scene">
+      <div class="background">
+        <div class="sparkles" aria-hidden="true"></div>
+      </div>
+
+      <div id="thumbi" class="momo" role="img" aria-label="Thumbi the magical pet">
+        <!-- Tail (behind body) -->
+        <svg id="tail" class="tail" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path id="tailPath" d="M180 60 C140 30 120 20 90 30 C70 36 50 50 35 70" stroke="#E9D2F3" stroke-width="36" opacity="0.98"/>
+            <path d="M180 60 C140 30 120 20 90 30 C70 36 50 50 35 70" stroke="#F7CFF6" stroke-width="20" opacity="0.8"/>
+          </g>
+        </svg>
+
+        <!-- Body + wings + face -->
+        <div class="body-wrapper">
+          <svg id="wings" class="wings" viewBox="0 0 300 160" preserveAspectRatio="xMidYMid meet">
+            <g>
+              <path id="wingL" d="M60 90 C10 40 40 10 110 30 C140 40 100 100 60 90" fill="rgba(200,175,255,0.55)" />
+              <path id="wingR" d="M240 90 C290 40 260 10 190 30 C160 40 200 100 240 90" fill="rgba(200,175,255,0.55)" />
+            </g>
+          </svg>
+
+          <svg class="body" viewBox="0 0 220 200" preserveAspectRatio="xMidYMid meet">
+            <!-- body blob -->
+            <ellipse cx="110" cy="110" rx="90" ry="80" fill="#F7DFF8" />
+            <ellipse cx="100" cy="100" rx="76" ry="70" fill="#EDD7F0" />
+
+            <!-- ears -->
+            <g id="ears" fill="#F4CDEB">
+              <ellipse cx="60" cy="40" rx="20" ry="24" />
+              <ellipse cx="160" cy="40" rx="20" ry="24" />
+              <ellipse cx="60" cy="40" rx="8" ry="10" fill="#E6AEE6" />
+              <ellipse cx="160" cy="40" rx="8" ry="10" fill="#E6AEE6" />
+            </g>
+
+            <!-- eyes -->
+            <g id="eyes">
+              <ellipse id="eyeL" cx="75" cy="105" rx="22" ry="28" fill="#ffffff" />
+              <ellipse id="eyeR" cx="145" cy="105" rx="22" ry="28" fill="#ffffff" />
+              <circle cx="75" cy="105" r="10" fill="#7CC7FF" />
+              <circle cx="145" cy="105" r="10" fill="#7CC7FF" />
+              <circle cx="70" cy="100" r="4" fill="#fff" opacity="0.9" />
+              <circle cx="140" cy="100" r="4" fill="#fff" opacity="0.9" />
+            </g>
+
+            <!-- nose / mouth -->
+            <g id="faceMark" fill="#F2A8E6">
+              <circle cx="110" cy="130" r="6" />
+            </g>
+
+          </svg>
+        </div>
+
+        <!-- Tail front shimmer -->
+        <div class="tail-shimmer" aria-hidden="true"></div>
+      </div>
+
+      <!-- Meters & controls -->
+      <aside class="hud">
+        <div class="meters">
+          <label>❤️ Happiness
+            <div class="meter"><div id="happinessBar" class="bar"></div></div>
+          </label>
+          <label>🍗 Hunger
+            <div class="meter"><div id="hungerBar" class="bar"></div></div>
+          </label>
+          <label>⚡ Energy
+            <div class="meter"><div id="energyBar" class="bar"></div></div>
+          </label>
+        </div>
+
+        <div class="controls">
+          <button id="petBtn" class="big">PET</button>
+          <button id="feedBtn" class="big">FEED</button>
+          <button id="playBtn" class="big">PLAY</button>
+          <button id="talkBtn" class="big">TALK</button>
+        </div>
+      </aside>
+
+      <!-- Talk panel (placeholder) -->
+      <div id="talkPanel" class="talk-panel hidden">
+        <header>
+          <h3>Talk to Thumbi</h3>
+          <button id="closeTalk">Close</button>
+        </header>
+        <div class="conversation">
+          <div id="talkLog" class="talk-log"></div>
+          <div class="talk-input">
+            <input id="talkInput" placeholder="Say something to Thumbi..." />
+            <button id="sendTalk">Send</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="thumbi.js"></script>
+</body>
+</html>
